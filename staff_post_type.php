@@ -1,7 +1,7 @@
 <?php
 /*Plugin Name: Create staff Post Type
 Description: This plugin registers the staff post type.
-Version: 1.0.8
+Version: 1.1.0
 License: GPLv2
 GitHub Plugin URI: https://github.com/aaronaustin/staff-post-type
 */
@@ -27,14 +27,14 @@ function create_staff_post_type() {
     //register post type
 	register_post_type( 'staff', array(
 		'labels' => $labels,
-        'show_in_rest' => false,
+        'show_in_rest' => true,
 		'has_archive' => true,
  		'public' => true,
 		'taxonomies' => '',
 		'exclude_from_search' => true,
 		'capability_type' => 'post',
 		'rewrite' => array( 'slug' => 'staff'),
-		'rest_base' => '',
+		'rest_base' => 'staff',
         'rest_controller_class' => '',
         'menu_icon' => 'dashicons-id-alt',
         'supports' => array( 'title', 'editor', 'thumbnail','staff_start_datetime' )
